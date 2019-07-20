@@ -1,2 +1,16 @@
 Obi Emelonye
 Opara Prosper
+Updated
+
+When I'm trying to push my code using git push origin master it ask me the password for 'https://test_ankit@bitbucket.org' but my actual username is 'rest_ankit'.
+
+I've used this command to change it 'git config --global user.name "rest_ankit"', but it didn't work. its still asking password for wrong username, and showing authentication failed. Plz help me out. Thanks.
+
+
+You can change the url of origin with:
+
+git remote set-url https://rest_ankit@bitbucket.org/username/reponame.git
+That will change the username associated with the url as well.
+Use the full url of your repo, not just bitbucket.org, but bitbucket.org/username/reponame.git, replacing username and reponame with the right values.
+
+Note that the http credentials has nothing to do with git config user.name: the latter is user for commit authorship, not for authentication during push/pull.
